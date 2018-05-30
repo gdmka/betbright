@@ -5,8 +5,8 @@ from functools import wraps
 
 from logger import configure_logger
 
-logging = configure_logger(filename="date_calculation.log",
-                           logger_name="date_calculation")
+logging = configure_logger(filename="lru_cache.log",
+                           logger_name="lru_cache")
 
 
 def lru_cache(maxsize=100):
