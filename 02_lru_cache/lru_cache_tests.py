@@ -65,22 +65,5 @@ class LRUCacheTest(unittest.TestCase):
             f(choice(choices), choice(choices))
         self.assertNotEqual(f.misses, 0)
 
-
-
-
-
-
 if __name__ == '__main__':
     unittest.main()
-
-# @lru_cache(maxsize=50000)
-# def f(x, y):
-#     return 3*x+y
-
-# domain = range(10)
-# from random import choice
-# for i in range(1000):
-#     r = f(choice(domain), choice(domain))
-# print(f.hits, f.misses)
-# f.clear()
-# print(f.hits, f.misses)
