@@ -38,7 +38,7 @@ class DateCalculationTest(unittest.TestCase):
 
     def test_dublin_sunday_date(self):
         draw_date = next_draw_date(self.dublin_sun)
-        # self.assertEqual(draw_date, date(2018, 6, 6))
+        self.assertEqual(draw_date, date(2018, 6, 6))
 
     def test_dublin_wednesday_after(self):
         draw_date = next_draw_date(self.dublin_wed_aft)
