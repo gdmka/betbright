@@ -72,17 +72,19 @@ def next_draw_date(date_time=None):
     if current_weekday in days_after_wednesday:
         next_draw = (dublin_dt + timedelta(days=SATURDAY - current_weekday)).date()
 
-    if current_weekday == WEDNESDAY and dublin_dt.hour < draw_hour_start:
-        next_draw = dublin_dt.date()
+    if current_weekday == WEDNESDAY:
+        if dublin_dt.hour < draw_hour_start:
+            next_draw = dublin_dt.date()
 
-    elif dublin_dt.hour > draw_hour_start:
-        next_draw = (dublin_dt + timedelta(days=SATURDAY - WEDNESDAY)).date()
+        else:
+            next_draw = (dublin_dt + timedelta(days=SATURDAY - WEDNESDAY)).date()
 
-    if current_weekday == SATURDAY and dublin_dt.hour < draw_hour_start:
-        next_draw = dublin_dt.date()
+    if current_weekday == SATURDAY:
+        if dublin_dt.hour < draw_hour_start:
+            next_draw = dublin_dt.date()
 
-    elif dublin_dt.hour > draw_hour_start:
-        next_draw = (dublin_dt + timedelta(days=SATURDAY - current_weekday)).date()
+        else:
+            next_draw = (dublin_dt + timedelta(days=SATURDAY - current_weekday)).date()
 
     logging.info("Next draw date {}".format(next_draw))
 
