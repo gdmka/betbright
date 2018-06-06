@@ -50,7 +50,7 @@ def fib_naive(n):
 def fib_seq_naive(n):
     seq = []
     if n > 0:
-        seq.extend(fib_seq(n - 1))
+        seq.extend(fib_seq_naive(n - 1))
     seq.append(fib_naive(n))
     return seq
 
