@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from collections import OrderedDict
 from functools import wraps
 
 from logger import configure_logger
