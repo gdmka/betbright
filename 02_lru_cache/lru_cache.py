@@ -29,7 +29,7 @@ def lru_cache(maxsize=100):
             TypeError: if calling function arguments are not hashable.
     """
     def decorating_fn(func):
-        cache = {}    # order: least recent to most recent
+        cache = {}
 
         # Using OrderedDict approach
         # # https://github.com/python/cpython/blob/master/Lib/collections/__init__.py#L88
